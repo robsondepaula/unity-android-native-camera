@@ -1,0 +1,76 @@
+apply plugin: 'com.android.library'
+
+ext.buildWithDebug = false
+
+// command line argument parsing
+gradle.startParameter.taskRequests.each { taskRequest ->
+    taskRequest.args.each { taskName ->
+        if (taskName.contains("Debug")) {
+            buildWithDebug = true
+        }
+    }
+}
+
+ext.unityPluginPath = "../../UnityAndroidCamera/Assets/Plugins/Android/"
+ext.unityPluginArtifact = "camera-release.aar"
+ext.artifactPath = "build/outputs/aar/"
+ext.manifestPath = "build/intermediates/manifests/full/"
+ext.artifactName = "camera"
+
+// convenience method to deploy release Android archive and manifest to the Unity application project
+gradle.buildFinished { buildResult ->
+
+    if (buildResult.failure == null) {
+        copy {
+            println("....................  deploy  ..............................")
+
+            if (buildWithDebug) {
+                artifactName = artifactName + "-debug.aar"
+                manifestPath = manifestPath + "debug/AndroidManifest.xml"
+            } else {
+                artifactName = artifactName + "-release.aar"
+                manifestPath = manifestPath + "release/AndroidManifest.xml"
+            }
+
+            from(artifactPath + artifactName)
+            into(unityPluginPath)
+            rename { String fileName ->
+                fileName.replace(artifactName, unityPluginArtifact)
+            }
+            from(manifestPath)
+            into(unityPluginPath)
+            println("....................  build and deploy finished  ..............................")
+        }
+    }
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        minSdkVersion 22
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        renderscriptTargetApi 22
+        renderscriptSupportModeEnabled false
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+            testCoverageEnabled = false
+        }
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            testCoverageEnabled = false
+        }
+    }
+}
+
+dependencies {
+    compileOnly files('src/main/library/unity_android_player.jar')
+}
