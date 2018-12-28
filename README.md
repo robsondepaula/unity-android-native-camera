@@ -14,3 +14,14 @@ The folder structure contains the following code:
 
 Upon success you'll see something like the below image on your Android device:
 ![Screenshot](screen.png)
+
+## Troubleshooting
+
+If you have trouble building the Unity project, please try the following:
+```
+Open "Build Settings" and make sure:
+
+"Android" is selected in the Platform panel;
+the Build System dropbox is showing "Internal".
+This should allow you to build successfully.
+```
