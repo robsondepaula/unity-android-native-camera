@@ -12,9 +12,10 @@ gradle.startParameter.taskRequests.each { taskRequest ->
 }
 
 ext.unityPluginPath = "../../UnityAndroidCamera/Assets/Plugins/Android/"
+ext.unityManifestPath = "../../UnityAndroidCamera/Assets/Plugins/Android/LauncherManifest.xml"
 ext.unityPluginArtifact = "camera-release.aar"
 ext.artifactPath = "build/outputs/aar/"
-ext.manifestPath = "build/intermediates/manifests/full/"
+ext.manifestPath = "build/intermediates/library_manifest/"
 ext.artifactName = "camera"
 
 // convenience method to deploy release Android archive and manifest to the Unity application project
