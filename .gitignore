@@ -1,7 +1,3 @@
-/[Ll]ibs/
-/[Oo]bj/
-
-# OS-specific files
 ### macOS ###
 # General
 .DS_Store
