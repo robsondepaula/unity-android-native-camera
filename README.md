@@ -25,6 +25,14 @@ Toolchain:
 * Unity Hub 2.3.2
 * Unity 2020.1.3f1
 
+## Known issues
+
+Contributions welcome:
+
+#6
+#7
+#8
+
 ## Troubleshooting
 
 If you have trouble building the Unity project, please try the following:
