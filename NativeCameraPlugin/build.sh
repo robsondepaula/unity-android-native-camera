@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NDK_ROOT="/Developer/android-ndk-r13b"
+NDK_ROOT="/Users/robson.p/Library/Android/sdk/ndk/21.3.6528147"
 cd "jni"
 $NDK_ROOT/ndk-build -B V=1
 cd ..
