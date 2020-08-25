@@ -27,11 +27,13 @@ Toolchain:
 
 ## Known issues
 
-Contributions welcome:
+* The "Development Build" option must be enabled in Unity. ([#6][i6])
+* Android libraries must be generated using the "Debug" flavor. ([#7][i7])
+* The Android Camera permission needs to be set manually. ([#8][i8])
 
-#6
-#7
-#8
+[i6]: https://github.com/robsondepaula/unity-android-native-camera/issues/6
+[i7]: https://github.com/robsondepaula/unity-android-native-camera/issues/7
+[i8]: https://github.com/robsondepaula/unity-android-native-camera/issues/8
 
 ## Troubleshooting
 
