@@ -1,5 +1,6 @@
 # Built application files
 **/build/
+**/.cxx/
 **/generatedJava/
 
 # Crashlytics configuations
