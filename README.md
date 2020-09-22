@@ -24,12 +24,6 @@ Toolchain:
 * Unity Hub 2.3.2
 * Unity 2020.1.3f1
 
-## Known issues
-
-* The Android Camera permission needs to be set manually. ([#8][i8])
-
-[i8]: https://github.com/robsondepaula/unity-android-native-camera/issues/8
-
 ## Troubleshooting
 
 If you have trouble building the Unity project, please try the following:
