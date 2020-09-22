@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="arp.camera">
+    package="arp.camera.plugin">
 
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -19,7 +19,7 @@
     <application android:label="@string/app_name">
 
         <activity
-            android:name=".CameraPluginActivity"
+            android:name="arp.camera.CameraPluginActivity"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
             android:label="@string/app_name"
             android:screenOrientation="landscape">
